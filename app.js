@@ -634,7 +634,7 @@ function clearActiveFilters(key) {
   render();
 }
 
-function render({ keepPage = false } = {}) {
+function render({ keepPage = false, updateUrl = true } = {}) {
   if (!keepPage) state.page = PAGE_SIZE;
   const error = state.loadErrors[state.view];
   if (error) {
@@ -662,7 +662,7 @@ function render({ keepPage = false } = {}) {
   }
   ui.categoryFilter.value = state.category;
   renderActiveFilters();
-  syncUrl();
+  if (updateUrl) syncUrl();
 }
 
 /* ---------- navegación ---------- */
@@ -708,7 +708,7 @@ function businessFromPath() {
   return routeIndex < 0 ? null : parts[routeIndex + 1] || null;
 }
 
-function setView(view) {
+function setView(view, { updateUrl = true } = {}) {
   if (view === state.view) return;
   state.view = view;
   state.category = "Todos";
@@ -727,7 +727,7 @@ function setView(view) {
   });
   setupFilters();
   setupSort();
-  render();
+  render({ updateUrl });
   alignListToHeader();
 }
 
@@ -870,8 +870,9 @@ function showBusiness(profile, backPromoId = null, { fromHistory = false, hasHis
 
 function handlePopState() {
   const params = new URLSearchParams(location.search);
+  const routeSlug = businessFromPath();
   const viewFromUrl = params.get("view") === "promos" ? "promos" : "negocios";
-  if (viewFromUrl !== state.view) setView(viewFromUrl);
+  if (viewFromUrl !== state.view) setView(viewFromUrl, { updateUrl: false });
 
   state.category = "Todos";
   state.search = "";
@@ -891,10 +892,9 @@ function handlePopState() {
   state.promoPrecio = viewFromUrl === "promos" && state.promoTipo === "Descuento" && priceBands.some((band) => band.value === price) ? price : "Todos";
   ui.precio.value = state.promoPrecio;
   setupSort();
-  render();
+  render({ updateUrl: false });
 
   const businessId = Number(params.get("negocio") || params.get("open"));
-  const routeSlug = businessFromPath();
   const routeProfile = routeSlug ? state.profiles.find((item) => businessSlug(item) === routeSlug) : null;
   const profile = (businessId ? state.profilesById.get(businessId) : null) || routeProfile;
   if (profile) {

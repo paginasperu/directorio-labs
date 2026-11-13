@@ -3,9 +3,9 @@ import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../docs");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const port = Number(process.env.PORT || 4173);
-const basePath = `/${String(process.env.BASE_PATH || "/directorio-labs/").split("/").filter(Boolean).join("/")}/`;
+const basePath = "/directorio-labs/";
 const contentTypes = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".csv": "text/csv; charset=utf-8", ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".webmanifest": "application/manifest+json" };
 
 createServer(async (request, response) => {
@@ -20,10 +20,11 @@ createServer(async (request, response) => {
     }
     const relative = pathname.replace(/^\/+/, "");
     let file = path.resolve(root, relative || "index.html");
-    if (!file.startsWith(root)) throw new Error("Ruta inválida");
+    if (!file.startsWith(root + path.sep)) throw new Error("Ruta inválida");
     if ((await stat(file).catch(() => null))?.isDirectory()) file = path.join(file, "index.html");
+    const body = await readFile(file);
     response.writeHead(200, { "Content-Type": contentTypes[path.extname(file)] || "application/octet-stream" });
-    response.end(await readFile(file));
+    response.end(body);
   } catch {
     response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     response.end("No encontrado");

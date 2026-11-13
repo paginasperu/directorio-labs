@@ -14,22 +14,22 @@ npm run build
 npm run preview
 ```
 
-Abre `http://127.0.0.1:4173/directorio-labs/`. Para probar una ficha, ábrela desde el listado y copia su URL; también puedes recargar o abrir esa URL en otra pestaña. El resultado generado queda en `docs/`.
+Abre `http://127.0.0.1:4173/directorio-labs/`. Para probar una ficha, ábrela desde el listado y copia su URL; también puedes recargar o abrir esa URL en otra pestaña. Las fichas generadas quedan en `negocios/`.
 
 ## Publicar manualmente en GitHub Pages
 
 1. Ejecuta `npm run build` antes de subir cambios.
-2. Sube el código y el contenido generado de `docs/` a la rama `main`.
-3. En **Settings → Pages**, elige **Deploy from a branch**, `main` y `/docs`.
+2. Sube el código y las fichas generadas de `negocios/` a la rama `main`.
+3. En **Settings → Pages**, elige **Deploy from a branch**, `main` y `/ (root)`.
 
-Node corre en tu equipo para generar HTML. GitHub Pages sirve archivos estáticos; no se ejecuta Node en el sitio ni hace falta GitHub Actions. Cada cambio que afecte la web requiere volver a generar `docs/` antes de subir.
+Node corre en tu equipo para generar HTML. GitHub Pages sirve archivos estáticos; no se ejecuta Node en el sitio ni hace falta GitHub Actions. Cada cambio que afecte la web requiere volver a ejecutar el generador antes de subir.
 
 ## Alcance de la prueba
 
 - Genera rutas `/negocios/nombre-del-negocio-ID/` desde `data/negocios.csv`.
 - Las rutas directas abren la ficha en la SPA y tienen título, descripción y canonical propios.
 - Conserva la URL de consulta para vistas y filtros; los detalles de promociones siguen con el comportamiento actual.
-- `BASE_PATH` permite adaptar el build a la ruta del repositorio en GitHub Pages; el servidor local monta esa misma ruta.
+- La vista local usa el mismo prefijo que GitHub Pages.
 
 Los CSV son datos de demo y se mantienen como están. Esta sandbox no reemplaza ni altera el repo de producción.
 
