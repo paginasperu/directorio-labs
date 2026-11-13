@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <base href="/directorio-labs/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f5f5f7">
+    <meta name="color-scheme" content="light">
+    <script>
+        // Decidir antes del primer dibujo: el aviso no aparece tarde sobre la cabecera.
+        (() => {
+            const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            const safari = /Safari/.test(navigator.userAgent) && !/CriOS|FxiOS|EdgiOS|OPiOS/.test(navigator.userAgent);
+            const supported = ios ? safari : /Chrome|Chromium|Edg\//.test(navigator.userAgent);
+            let dismissed = false;
+            try { dismissed = Number(localStorage.getItem('directorio.install.dismissedUntil')) > Date.now(); } catch {}
+            if (supported && !dismissed && !matchMedia('(display-mode: standalone)').matches && navigator.standalone !== true) {
+                document.documentElement.classList.add('install-promotion');
+            }
+        })();
+    </script>
+    <title>Mariana Fashion · Directorio</title>
+    <meta name="description" content="Consulta la ficha de Mariana Fashion en Directorio: ubicación, contacto y promociones.">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon-oficial.svg?v=20235d7c4aaf">
+    <link rel="apple-touch-icon" href="assets/img/icon-oficial-192.png?v=1739cedc0c13">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Directorio">
+    <meta property="og:title" content="Mariana Fashion · Directorio">
+    <meta property="og:description" content="Consulta la ficha de Mariana Fashion en Directorio: ubicación, contacto y promociones.">
+    <meta property="og:url" content="https://paginasperu.github.io/directorio-labs/negocios/mariana-fashion-76/">
+    <meta property="og:image" content="https://www.oficial.pe/assets/img/og-image-oficial-si-es.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1672">
+    <meta property="og:image:height" content="941">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mariana Fashion · Directorio">
+    <meta name="twitter:description" content="Consulta la ficha de Mariana Fashion en Directorio: ubicación, contacto y promociones.">
+    <meta name="twitter:image" content="https://www.oficial.pe/assets/img/og-image-oficial-si-es.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/tailwind.css?v=1665b044988e">
+    <link rel="stylesheet" href="assets/css/styles.css?v=dc65bfc6571e">
+    <link rel="stylesheet" href="style.css?v=8a5d866b060f">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=optional" rel="stylesheet">
+    <link rel="canonical" href="https://paginasperu.github.io/directorio-labs/negocios/mariana-fashion-76/">
+    <meta name="directory-business-id" content="76">
+</head>
+<body class="fm-page min-h-screen flex flex-col">
+
+    <aside id="installBanner" class="install-banner" aria-label="Instalar Directorio">
+        <span>Instala la app de Directorio</span>
+        <div class="install-banner__actions">
+            <button id="installApp" type="button" class="install-banner__primary">Instalar</button>
+            <button id="dismissInstall" type="button" class="install-banner__secondary">Ahora no</button>
+        </div>
+    </aside>
+    <dialog id="installGuide" class="install-guide" aria-labelledby="installGuideTitle">
+        <h2 id="installGuideTitle">Añadir Directorio al inicio</h2>
+        <ol><li>En Safari, toca <strong>Compartir</strong></li><li>Elige <strong>Añadir a pantalla de inicio</strong></li><li>Confirma con <strong>Añadir</strong></li></ol>
+        <p id="installGuideNote" class="install-guide__note" hidden></p>
+        <form method="dialog"><button class="install-banner__primary">Entendido</button></form>
+    </dialog>
+
+    <header id="siteHeader" class="site-header app-header sticky top-0 z-40">
+        <div class="app-search-row">
+            <a class="header-brand app-brand-inline" href="./" aria-label="oficial.pe, inicio">
+                <img class="official-wordmark" src="assets/img/logo-oficial-claro.svg?v=2e2714082d63" alt="" width="84" height="24">
+            </a>
+
+            <div class="header-search hidden md:flex items-center min-w-0">
+                <form class="relative flex-1 min-w-0" onsubmit="event.preventDefault()">
+                    <input type="search" id="businessSearch" aria-label="Buscar negocios o promociones" placeholder="Buscar en Directorio" class="app-input w-full pr-12" autocomplete="off">
+                    <button type="submit" aria-label="Ver resultados" title="Ver resultados" class="app-input-btn">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+                    </button>
+                </form>
+            </div>
+
+            <div id="mobileSearch" class="md:hidden">
+                <form class="relative flex-1" onsubmit="event.preventDefault()">
+                    <input type="search" id="mobileBusinessSearch" aria-label="Buscar negocios o promociones" placeholder="Buscar en Directorio" class="app-input w-full pr-12" autocomplete="off">
+                    <button type="submit" aria-label="Ver resultados" title="Ver resultados" class="app-input-btn">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+                    </button>
+                </form>
+            </div>
+
+            <a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20registrarme%20en%20el%20directorio..." target="_blank" rel="noopener noreferrer" class="subscribe-soft app-subscribe-inline">Registrar negocio</a>
+            <a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20registrarme%20en%20el%20directorio..." target="_blank" rel="noopener noreferrer" class="subscribe-soft app-subscribe-mobile">Registrar negocio</a>
+        </div>
+
+        <div class="app-tabbar">
+            <nav class="app-tabs" aria-label="Secciones">
+                <a href="./" class="section-tab is-active" data-view="negocios" aria-current="page">
+                    Negocios<span id="countNegocios"></span>
+                </a>
+                <a href="?view=promos" class="section-tab" data-view="promos">
+                    Promociones<span id="countPromos"></span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="app-cats" aria-label="Categorías">
+        <div class="app-cats__inner">
+            <div class="category-strip">
+                <nav id="categoryList" aria-label="Categorías y tipos de promoción"></nav>
+            </div>
+            <button type="button" class="cat-nav cat-nav--prev" aria-label="Ver categorías anteriores">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="cat-nav cat-nav--next" aria-label="Ver más categorías">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <main class="fm-main">
+
+        <h1 class="sr-only">Directorio de negocios, tiendas y servicios</h1>
+
+        <div class="results-panel" id="resultsPanel">
+            <div id="resultsToolbar" class="results-toolbar" aria-label="Orden y filtros de resultados">
+                <p id="resultsCount" class="results-count" aria-live="polite"></p>
+
+                <div class="results-controls">
+                    <button id="filterToggle" type="button" aria-controls="moreFilters" aria-expanded="false" aria-label="Filtrar" class="filter-toggle app-filter">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5h17l-6.5 7.5V18l-4 2v-7.5L3.5 5Z"/></svg>
+                        <span>Filtrar</span>
+                        <span id="filterCount" class="filter-count" hidden></span>
+                    </button>
+                    <div class="results-actions">
+                        <svg class="results-sort-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 4 4 4-4M7 20V4m14 4-4-4-4 4m4-4v16"/></svg>
+                        <select id="sortSelect" aria-label="Ordenar resultados" class="results-sort">
+                            <option value="destacados">Destacados</option>
+                            <option value="name">Nombre A–Z</option>
+                            <option value="piso">Piso</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="activeFilters" class="active-filters" role="region" aria-label="Filtros activos" hidden></div>
+
+            <div id="loadError" class="load-error" role="alert" hidden>
+                <p></p>
+                <button type="button" class="load-error__retry">Reintentar</button>
+            </div>
+
+            <div id="providerGrid" aria-busy="true">
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+                <div class="d2-skel" aria-hidden="true"></div>
+            </div>
+
+            <div id="loadMoreWrap" hidden>
+                <button id="loadMore" type="button" class="d2-load-more">Cargar más</button>
+                <p id="loadMoreNote" class="d2-load-more__note"></p>
+            </div>
+
+            <div id="emptyState" class="hidden text-center py-16 bg-white rounded-3xl border border-dashed border-slate-300 my-8">
+                <h3 class="text-lg font-bold text-slate-800">No se encontraron resultados</h3>
+                <p class="text-sm text-slate-500 mt-1 max-w-md mx-auto">Prueba con otra palabra, categoría o piso.</p>
+                <button id="resetFiltersEmpty" type="button" class="mt-4 px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-xl hover:bg-slate-200 transition">Limpiar búsqueda y filtros</button>
+            </div>
+        </div>
+
+        <section id="suscripcion" class="fm-cta">
+            <div class="fm-cta-inner">
+                <p class="fm-eyebrow">¿Tienes un negocio en el directorio?</p>
+                <h2>Regístrate en el directorio</h2>
+                <p>Publicamos tu tienda con su ubicación, contacto y redes. Es gratis.</p>
+                <a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20registrarme%20en%20el%20directorio..." target="_blank" rel="noopener noreferrer">Regístrate</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="filterDrawerBackdrop" class="fixed inset-0 z-50 bg-slate-900/50 hidden transition-opacity duration-200 opacity-0"></div>
+    <aside id="moreFilters" role="dialog" aria-modal="true" aria-labelledby="filterDrawerTitle" aria-hidden="true" inert class="fixed top-0 left-0 bottom-0 z-50 w-full max-w-xs sm:max-w-sm bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-200 ease-out">
+        <div class="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <h2 id="filterDrawerTitle" class="text-base font-bold text-slate-900">Filtros</h2>
+            <button id="closeFilterDrawer" type="button" aria-label="Cerrar filtros" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-200 text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+
+        <div class="p-5 flex-1 overflow-y-auto space-y-6 text-sm">
+            <div>
+                <label for="categoryFilter" class="block font-bold text-slate-800 mb-1.5">Categoría</label>
+                <select id="categoryFilter" class="w-full h-10 px-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300"></select>
+            </div>
+
+            <div id="bizFilters" class="space-y-6">
+                <div>
+                    <label for="floorFilter" class="block font-bold text-slate-800 mb-1.5">Piso</label>
+                    <select id="floorFilter" class="w-full h-10 px-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300"></select>
+                </div>
+            </div>
+
+            <div id="promoFilters" class="space-y-6 hidden">
+                <div id="promoPriceFilter">
+                    <label for="precioFilter" class="block font-bold text-slate-800 mb-1.5">Precio</label>
+                    <select id="precioFilter" class="w-full h-10 px-3 bg-slate-50 border border-slate-200 rounded-lg text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center gap-2">
+            <button id="resetFilters" type="button" class="flex-1 py-2.5 px-3 bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold rounded-lg text-xs text-center transition">Restablecer</button>
+            <button id="applyFilterDrawer" type="button" class="flex-1 py-2.5 px-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg text-xs text-center transition">Cerrar filtros</button>
+        </div>
+    </aside>
+
+    <div id="modalDetail" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden relative max-h-[90vh] flex flex-col my-auto" id="modalDetailContent">
+            <button type="button" id="closeDetail" aria-label="Cerrar ficha" class="absolute top-3 right-3 z-20 w-9 h-9 bg-white/90 hover:bg-white text-slate-700 rounded-full flex items-center justify-center shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <div class="overflow-y-auto flex-grow" id="modalBody"></div>
+            <div class="p-4 sm:px-7 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row justify-end gap-2.5">
+                <a id="modalCallBtn" href="#" class="w-full sm:w-auto px-5 py-3 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-xl text-sm text-center">Llamar</a>
+                <a id="modalWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm text-center">Contactar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20directorio" target="_blank" rel="noopener noreferrer">Contacto</a>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <p>© 2026 · Directorio gratuito e independiente. Datos referenciales. Confirma los datos con cada negocio.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="app.js?v=fd367347c42c"></script>
+</body>
+</html>

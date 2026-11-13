@@ -1,0 +1,9 @@
+{
+  "name": "directorio-labs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-pages.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio · Versión 1</title>
+    <meta name="description" content="Directorio de negocios, tiendas y servicios. Explora por categoría, descubre promociones y contacta directo con cada negocio.">
+    <meta name="theme-color" content="#14110f">
+    <link rel="manifest" href="../../manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon-oficial.svg?v=20235d7c4aaf">
+    <link rel="apple-touch-icon" href="../../assets/img/icon-oficial-192.png?v=1739cedc0c13">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Directorio">
+    <meta property="og:title" content="Directorio · Versión 1">
+    <meta property="og:description" content="Explora por categoría, descubre promociones y contacta directo con cada negocio.">
+    <meta property="og:url" content="https://directorio.oficial.pe/versions/1/">
+    <meta property="og:image" content="https://directorio.oficial.pe/assets/img/og-image-oficial.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Directorio · Versión 1">
+    <meta name="twitter:description" content="Explora por categoría, descubre promociones y contacta directo con cada negocio.">
+    <meta name="twitter:image" content="https://directorio.oficial.pe/assets/img/og-image-oficial.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=355f9017cae3">
+</head>
+<body>
+
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4.7-7 9-7 9Z"/></symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><rect x="14" y="14" width="6" height="6" rx="1.2"/></symbol>
+        <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+        <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+        <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+        <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5m-6 6 6-6 6 6"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.34ZM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88Zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.49-8.4Z"/></symbol>
+        <symbol id="i-call" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14 8.5V6.8c0-.7.4-1 1-1h2V3h-2.8C11.7 3 10.5 4.4 10.5 6.5v2H8v3h2.5V21H14v-9.5h2.6l.4-3H14Z"/></symbol>
+        <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.5 3c.4 2 1.7 3.4 3.5 3.7v2.7c-1.3 0-2.5-.4-3.5-1.1v6.3a5.8 5.8 0 1 1-5.8-5.8c.3 0 .6 0 .9.1v2.9a2.9 2.9 0 1 0 2 2.8V3h2.9Z"/></symbol>
+        <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9h16l-1.2 9.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9Z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2M8 14h8"/></symbol>
+        <symbol id="i-shirt" viewBox="0 0 24 24"><path d="m8.5 4-4 2.5 2 3.2 2-1.1V20h7V8.6l2 1.1 2-3.2-4-2.5-1.6 1.5h-3.8L8.5 4Z"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.2"/><path d="M10.5 18h3"/></symbol>
+        <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V8Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2M4 22h14"/></symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="m19 16 .7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2Z"/></symbol>
+        <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18M12 9v11M12 9c-2 0-4-1-4-3 0-1.5 2-2 4 3Zm0 0c2 0 4-1 4-3 0-1.5-2-2-4 3Z"/></symbol>
+        <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0-5.4 5.4L4 17l3 3 5.1-5.1a4 4 0 0 0 5.4-5.4l-3 3-3-3 3-3Z"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></symbol>
+        <symbol id="i-controller" viewBox="0 0 24 24"><path d="M7 8h10a5 5 0 0 1 5 5v2a3 3 0 0 1-5 2l-2-2H9l-2 2a3 3 0 0 1-5-2v-2a5 5 0 0 1 5-5Z"/><path d="M8 12v3M6.5 13.5h3M16 12h.01M18 14h.01"/></symbol>
+        <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12 12 3h7v7l-9 9-7-7Z"/><circle cx="15.5" cy="7.5" r="1.3"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8L12 3.6Z"/></symbol>
+    </svg>
+
+    <a class="skip-link" href="#resultados">Saltar a resultados</a>
+
+    <div class="demo-bar">
+        <div class="shell demo-bar__inner">
+            <a href="../../">← Inicio del directorio</a>
+            <span>Versión 1</span>
+        </div>
+    </div>
+
+    <header class="site-head" id="siteHeader">
+        <div class="shell site-head__bar">
+            <a class="brand" href="./" aria-label="Directorio, inicio">
+                <span class="brand__mark" aria-hidden="true">
+                    <img src="../../assets/img/favicon-oficial.svg?v=20235d7c4aaf" alt="" width="34" height="34">
+                </span>
+                <span class="brand__name">Directorio</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Principal">
+                <button type="button" class="nav-link is-active" data-view="negocios" aria-pressed="true">Negocios</button>
+                <button type="button" class="nav-link" data-view="promos" aria-pressed="false">Promociones</button>
+                <button type="button" class="nav-link" data-view="favoritos" aria-pressed="false">Favoritos<span class="nav-count" id="favNavCount" hidden>0</span></button>
+            </nav>
+
+            <form class="head-search" role="search" id="searchForm">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                <input type="search" id="searchInput" placeholder="Busca negocios o servicios" aria-label="Buscar negocio, producto o servicio" autocomplete="off">
+                <button class="search-clear" id="clearSearch" type="button" aria-label="Limpiar búsqueda" hidden>
+                    <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                </button>
+            </form>
+
+            <div class="head-actions">
+                <a class="btn btn--primary btn--sm head-cta" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20al%20directorio" target="_blank" rel="noopener noreferrer">Suscríbete</a>
+                <button class="icon-btn" id="favTrigger" type="button" data-view="favoritos" aria-label="Ver favoritos">
+                    <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+                    <span class="count-bubble" id="favCount" hidden>0</span>
+                </button>
+                <button class="icon-btn mobile-search-toggle" id="mobileSearchToggle" type="button" aria-label="Abrir búsqueda" aria-controls="mobileSearchWrap" aria-expanded="false">
+                    <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-search" id="mobileSearchWrap">
+            <form class="shell" role="search" id="mobileSearchForm">
+                <div class="head-search head-search--mobile">
+                    <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                    <input type="search" id="mobileSearchInput" placeholder="Busca negocios o servicios" aria-label="Buscar negocio, producto o servicio" autocomplete="off">
+                    <button class="search-clear" id="clearSearchMobile" type="button" aria-label="Limpiar búsqueda" hidden>
+                        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Principal móvil">
+            <button type="button" class="nav-link is-active" data-view="negocios" aria-pressed="true">Negocios</button>
+            <button type="button" class="nav-link" data-view="promos" aria-pressed="false">Promociones</button>
+            <button type="button" class="nav-link" data-view="favoritos" aria-pressed="false">Favoritos</button>
+            <a class="nav-link nav-link--cta" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20al%20directorio" target="_blank" rel="noopener noreferrer">Suscríbete</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="shell hero__grid">
+                <div class="hero__copy">
+                    <p class="eyebrow">Directorio de mercados y galerías</p>
+                    <h1>Todo lo que buscas,<span>en un solo lugar.</span></h1>
+                    <p class="hero__lead">Negocios, tiendas y servicios de tu mercado o galería, con promociones y contacto directo. Sin intermediarios.</p>
+                    <form class="hero-search" id="heroSearchForm" role="search">
+                        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+                        <input type="search" id="heroSearchInput" placeholder="Busca negocios o servicios" aria-label="Buscar negocio, producto o servicio" autocomplete="off">
+                        <button class="search-clear" id="clearSearchHero" type="button" aria-label="Limpiar búsqueda" hidden>
+                            <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+                        </button>
+                        <button class="btn btn--primary" type="submit">Buscar</button>
+                    </form>
+                    <div class="hero-quick" aria-label="Búsquedas populares">
+                        <span class="hero-quick__label">Populares</span>
+                        <div class="hero-quick__cats" id="heroQuickCats"></div>
+                        <button class="hero-quick__link" type="button" data-view="promos">
+                            Ver promociones
+                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                        </button>
+                    </div>
+                    <dl class="hero__stats">
+                        <div><dt id="heroBiz">—</dt><dd>Negocios</dd></div>
+                        <div><dt id="heroPromos">—</dt><dd>Promociones</dd></div>
+                        <div><dt id="heroCats">—</dt><dd>Categorías</dd></div>
+                    </dl>
+                </div>
+
+                <div class="hero__mosaic" aria-hidden="true" id="heroMosaic">
+                    <div class="hero__sticker"><strong id="heroStickerCount">—</strong><span>promociones<br>activas</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories" id="categoriesSection" aria-labelledby="catTitle">
+            <div class="shell">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Explora</p>
+                        <h2 id="catTitle">Categorías</h2>
+                    </div>
+                    <p class="section-note" id="catNote">Encuentra lo que buscas por tipo de negocio.</p>
+                </div>
+                <nav class="cat-list" id="categoryList" aria-label="Categorías"></nav>
+            </div>
+        </section>
+
+        <section class="results" id="resultados" aria-labelledby="resultsTitle">
+            <div class="shell">
+                <div class="results__head">
+                    <div>
+                        <p class="eyebrow" id="resultsEyebrow">Directorio</p>
+                        <h2 id="resultsTitle">Negocios</h2>
+                    </div>
+                    <p class="results__count" id="resultsCount" aria-live="polite">Cargando…</p>
+                </div>
+
+                <div class="promo-tabs" id="promoTabs" hidden>
+                    <button type="button" class="promo-tab is-active" data-promo-kind="Descuento" aria-pressed="true">Descuentos <span id="countDesc">0</span></button>
+                    <button type="button" class="promo-tab" data-promo-kind="Regalo" aria-pressed="false">Regalos <span id="countPrem">0</span></button>
+                </div>
+
+                <div class="toolbar">
+                    <div class="toolbar__left">
+                        <button type="button" class="btn btn--outline filter-btn" id="filterBtn" aria-controls="filterPanel" aria-expanded="false">
+                            <svg class="icon" aria-hidden="true"><use href="#i-filter"></use></svg>
+                            <span>Filtros</span>
+                            <span class="filter-count" id="filterCount" hidden>0</span>
+                        </button>
+                        <div class="active-filters" id="activeFilters"></div>
+                    </div>
+                    <div class="toolbar__right">
+                        <label class="sort">
+                            <span>Ordenar</span>
+                            <select id="sortSelect" aria-label="Ordenar resultados"></select>
+                        </label>
+                        <div class="view-toggle" role="group" aria-label="Vista de resultados">
+                            <button type="button" class="view-btn is-active" data-layout="grid" aria-pressed="true" aria-label="Vista de cuadrícula">
+                                <svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg>
+                            </button>
+                            <button type="button" class="view-btn" data-layout="list" aria-pressed="false" aria-label="Vista de lista">
+                                <svg class="icon" aria-hidden="true"><use href="#i-list"></use></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid" id="grid" data-layout="grid" aria-busy="true"></div>
+
+                <div class="empty" id="empty" hidden>
+                    <div class="empty__icon"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></div>
+                    <h3 id="emptyTitle">No encontramos resultados</h3>
+                    <p id="emptyText">Prueba con otra palabra o cambia los filtros.</p>
+                    <button type="button" class="btn btn--primary" id="emptyReset">Limpiar filtros</button>
+                </div>
+
+                <nav class="pagination" id="pagination" aria-label="Paginación de resultados"></nav>
+            </div>
+        </section>
+
+        <section class="cta-band">
+            <div class="shell cta-band__inner">
+                <div>
+                    <p class="eyebrow">Para negocios</p>
+                    <h2>Haz que más gente te encuentre.</h2>
+                    <p>Publicamos tu tienda o servicio con ubicación, contacto y redes. Es gratis y sin comisiones.</p>
+                </div>
+                <a class="btn btn--light" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20al%20directorio" target="_blank" rel="noopener noreferrer">Suscríbete</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-foot">
+        <div class="shell site-foot__grid">
+            <div class="site-foot__brand">
+                <a class="brand brand--light" href="./" aria-label="Directorio, inicio">
+                    <span class="brand__mark" aria-hidden="true">
+                    <img src="../../assets/img/favicon-oficial.svg?v=20235d7c4aaf" alt="" width="34" height="34">
+                    </span>
+                    <span class="brand__name">Directorio</span>
+                </a>
+                <p>El directorio que conecta negocios, tiendas y servicios con las personas que los buscan.</p>
+                <a class="foot-wa" href="https://wa.me/51950141414?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20directorio" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+                    +51 950 141 414
+                </a>
+            </div>
+
+            <div>
+                <h3>Explorar</h3>
+                <ul>
+                    <li><button type="button" class="foot-link" data-view="negocios">Negocios</button></li>
+                    <li><button type="button" class="foot-link" data-view="promos">Promociones</button></li>
+                    <li><button type="button" class="foot-link" data-view="favoritos">Favoritos</button></li>
+                    <li><button type="button" class="foot-link" data-view="negocios" data-scroll="categoriesSection">Categorías</button></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20directorio" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                    <li><a href="https://wa.me/51950141414?text=Hola%2C%20quiero%20suscribirme%20al%20directorio" target="_blank" rel="noopener noreferrer">Suscríbete</a></li>
+                    <li><a href="../../">Volver al directorio</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="shell site-foot__legal">
+            <p>© 2026 · Directorio gratuito e independiente. Datos referenciales: <span id="legalBiz">85</span> negocios y <span id="legalPromos">170</span> promociones. Confirma cada dato con el negocio.</p>
+        </div>
+    </footer>
+
+    <div class="backdrop" id="filterBackdrop"></div>
+    <aside class="filter-panel" id="filterPanel" aria-label="Filtros" aria-hidden="true">
+        <div class="filter-panel__grab" aria-hidden="true"></div>
+        <div class="filter-panel__head">
+            <h2>Filtros</h2>
+            <button type="button" class="icon-btn icon-btn--dark" id="filterClose" aria-label="Cerrar filtros">
+                <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+            </button>
+        </div>
+        <div class="filter-panel__body">
+            <div class="filter-group">
+                <h3>Categoría</h3>
+                <select class="filter-select" id="filterCategory"></select>
+            </div>
+            <div class="filter-group">
+                <h3>Piso</h3>
+                <div class="chip-row" id="floorChips"></div>
+            </div>
+            <div class="filter-group" id="typeFilterWrap">
+                <h3>Tipo de negocio</h3>
+                <select class="filter-select" id="filterType"></select>
+            </div>
+            <div class="filter-group" id="promoFilterWrap" hidden>
+                <div id="modalityWrap">
+                    <h3>Modalidad del regalo</h3>
+                    <div class="chip-row" id="modalityChips"></div>
+                </div>
+                <div class="filter-group" id="priceWrap">
+                    <h3>Precio con descuento</h3>
+                    <select class="filter-select" id="filterPrice"></select>
+                </div>
+            </div>
+        </div>
+        <div class="filter-panel__foot">
+            <button type="button" class="btn btn--outline" id="filterReset">Limpiar</button>
+            <button type="button" class="btn btn--primary" id="filterApply">Ver resultados</button>
+        </div>
+    </aside>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__dialog" role="document">
+            <button type="button" class="modal__close" id="modalClose" aria-label="Cerrar ficha">
+                <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+            </button>
+            <div class="modal__body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <button type="button" class="to-top" id="toTop" aria-label="Volver arriba" hidden>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+    </button>
+
+    <script type="module" src="app.js?v=efa71a79fcf3"></script>
+</body>
+</html>
