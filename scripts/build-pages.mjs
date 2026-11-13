@@ -6,7 +6,7 @@ import { parseCsv } from "../assets/js/csv.js";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const output = path.join(root, "docs");
 const basePath = normalizeBase(process.env.BASE_PATH || "/directorio-labs/");
-const siteOrigin = (process.env.SITE_ORIGIN || "https://paginasperu.github.io").replace(/\/$/, "");
+const siteOrigin = (process.env.SITE_ORIGIN || "https://www.oficial.pe").replace(/\/$/, "");
 
 function normalizeBase(value) {
   const trimmed = `/${String(value).split("/").filter(Boolean).join("/")}`;
