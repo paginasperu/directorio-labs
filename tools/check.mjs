@@ -64,7 +64,7 @@ const htmlFiles = walk(root).filter((file) => file.endsWith(".html"));
 
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
-  const base = dirname(file);
+  const base = /<base\s+href=[\'"]\/directorio-labs\/[\'"]/.test(html) ? root : dirname(file);
   const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)]
     .map((match) => match[1])
     .filter((url) => !/^(https?:|#|mailto:|tel:|\/\/|data:)/.test(url))
@@ -72,7 +72,8 @@ for (const file of htmlFiles) {
     .filter(Boolean);
 
   for (const reference of new Set(references)) {
-    const target = resolve(reference.startsWith("/") ? root : base, reference.replace(/^\//, ""));
+    const localReference = reference.replace(/^\/directorio-labs\//, "/");
+    const target = resolve(localReference.startsWith("/") ? root : base, localReference.replace(/^\//, ""));
     if (!existsSync(target)) problems.push(`${file.replace(root + "\\", "")} -> ${reference}`);
   }
 }

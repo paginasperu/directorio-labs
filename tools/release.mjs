@@ -11,12 +11,13 @@ const visiting = new Set();
 const changed = [];
 const assetTypes = new Set(['.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.woff2']);
 
-function version(url, owner) {
+function version(url, owner, htmlBase = false) {
   if (/^(?:[a-z]+:|\/\/|#)/i.test(url)) return url;
   const [path, fragment] = url.split('#', 2);
   const [pathname, query = ''] = path.split('?', 2);
   if (!assetTypes.has(extname(pathname))) return url;
-  const target = pathname.startsWith('/') ? resolve(root, '.' + pathname) : resolve(dirname(owner), pathname);
+  const localPath = pathname.replace(/^\/directorio-labs\//, "/");
+  const target = localPath.startsWith('/') ? resolve(root, '.' + localPath) : resolve(htmlBase ? root : dirname(owner), localPath);
   if (!target.startsWith(root + sep) || !existsSync(target)) throw new Error(`Recurso inválido: ${url} en ${relative(root, owner)}`);
   const hash = processFile(target);
   const params = new URLSearchParams(query);
@@ -33,7 +34,7 @@ function processFile(file) {
   let result = original;
   if (['.html', '.js', '.css'].includes(ext)) {
     let text = original.toString('utf8');
-    if (ext === '.html') text = text.replace(/\b(src|href)=(['"])([^'"<>]+)\2/g, (all, attr, quote, url) => `${attr}=${quote}${version(url, file)}${quote}`);
+    if (ext === '.html') text = text.replace(/\b(src|href)=(['"])([^'"<>]+)\2/g, (all, attr, quote, url) => `${attr}=${quote}${version(url, file, /<base\s+href=[\'"]\/directorio-labs\/[\'"]/.test(text))}${quote}`);
     if (ext === '.js') text = text.replace(/(\bfrom\s*|\bimport\s*)(['"])([^'"\n]+)\2/g, (all, prefix, quote, url) => `${prefix}${quote}${version(url, file)}${quote}`);
     if (ext === '.css') text = text.replace(/url\(\s*(['"]?)([^)'"\s]+)\1\s*\)/g, (all, quote, url) => `url(${quote}${version(url, file)}${quote})`);
     result = Buffer.from(text);
